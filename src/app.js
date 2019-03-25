@@ -4,6 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
 const rq = require("./helpers");
+const funciones = require('./funciones');
 
 const directoriopublico = path.join(__dirname, "../public");
 const directoriopartials = path.join(__dirname, "../partials");
@@ -28,11 +29,11 @@ app.post("/inicio", (req, res) => {
   console.log(req.body.Contrasenia);
   if (verificarUsuario(req.body.Identificador, req.body.Contrasenia)) {
     res.render("inicio", {
-      ID: parseInt(req.body.Identificador),
-              
+      ID: parseInt(req.body.Identificador),              
     });
     
   }else{
+
     console.log('El usuario o contraseña son incorrectos');
     
   }
@@ -43,6 +44,10 @@ app.listen(4000, () => {
 });
 
 
+
+
+
+////FUNCIONES Y PROCEDIMIENTOS
 const listarUsuarios = () => {
     try {
       listadoUsuarios = require("./listadoUsuarios.json");
@@ -65,3 +70,25 @@ const listarUsuarios = () => {
           return false;
       }
   }
+
+  const guardarUsuario = (identificacion,contrasenia,nombre) =>{
+    let siExiste = listadoUsuarios.find(usuario => usuario.identificacion == identificacion);
+    if(siExiste){
+        console.log('Ya existe un usuario con ese número de identificación');
+    }else{
+        let usuario;
+        usuario.identificacion = identificacion;
+        usuario.contrasenia = contrasenia;
+        usuario.nombre = nombre;
+        listarUsuarios.push()
+        guardarUsuarioEnTexto();
+    }
+}
+
+const guardarUsuarioEnTexto = () => {
+  let datos = JSON.stringify(listadoUsuarios);
+  fs.writeFile("listadoUsuarios.json", datos, err => {
+    if (err) throw err;
+    console.log("Archivo creado");
+  });
+};
