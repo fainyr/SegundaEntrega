@@ -1,0 +1,36 @@
+body{
+    border-top: 2px solid purple;
+    color: blue;
+    font-family:arial;
+    min-height:50vh;
+    text-align: center;
+    
+}
+
+footer{
+    color: purple;
+    border-top: 2px solid purple;
+    min-height:100vh
+}
+
+header{
+    margin-top: 16px;
+    margin-bottom:40px;
+}
+
+h1{
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.centro{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.formulario{
+    height: 500px;
+    width: 500px;
+    margin-left: 400px;
+}
