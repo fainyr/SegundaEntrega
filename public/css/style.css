@@ -8,20 +8,22 @@ body{
 }
 
 footer{
-    color: purple;
-    border-top: 2px solid purple;
-    min-height:100vh
+    margin-top: 50px;
+    color: lawngreen;
+    border-top: 2px solid rgb(17, 172, 30);
+    min-height:50vh
 }
 
 header{
     margin-top: 16px;
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
-h1{
-    font-size: 48px;
+h2{
+    font-size: 25px;
     margin-bottom: 16px;
     text-align: center;
+    color: black;
 }
 
 .centro{
