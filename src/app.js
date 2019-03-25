@@ -12,6 +12,7 @@ hbs.registerPartials(directoriopartials);
 app.use(bodyParser.urlencoded({extended:false}))
 app.set('view engine', 'hbs');
 
+
 app.get('/', (req, res)=>{
 
     console.log(req.body);
