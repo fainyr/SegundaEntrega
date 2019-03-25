@@ -11,7 +11,7 @@ const listarUsuarios = () => {
     }
   };
 
-  const verificarUsuario =(identificacion,contrasenia)=>{
+  let verificarUsuario =(identificacion,contrasenia)=>{
       listarUsuarios();
       let siExiste = listadoUsuarios.find(usuario => usuario.identificacion == identificacion
                                                          && usuario.contrasenia == contrasenia);
