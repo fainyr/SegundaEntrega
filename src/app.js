@@ -25,11 +25,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/inicio", (req, res) => {
-  console.log(req.body.Identificador);
-  console.log(req.body.Contrasenia);
-  if (verificarUsuario(req.body.Identificador, req.body.Contrasenia)) {
+  console.log(req.body.identificacion);
+  console.log(req.body.contrasenia);
+  if (verificarUsuario(req.body.identificacion, req.body.contrasenia)) {
     res.render("inicio", {
-      ID: parseInt(req.body.Identificador),              
+      ID: parseInt(req.body.identificacion),
+      rol: req.body.rol              
     });
     
   }else{
