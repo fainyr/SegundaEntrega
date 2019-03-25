@@ -17,14 +17,19 @@ app.get('/', (req, res)=>{
 
     console.log(req.body);
     res.render('index',{
-        ID:parseInt(req.body.ID),
-        Nombre:parseInt(req.body.Nombre)
+        //ID:parseInt(req.body.ID),
+        //Nombre:parseInt(req.body.Nombre)
     });
 });
 
-app.get('/inicioAspirante',(req,res)=>{
-    console.log('aspitante');
+app.post('/inicio',(req,res)=>{
+    res.render('inicio',{
+        ID:parseInt(req.body.nombre),
+        Nombre:parseInt(req.body.contrasenia)
+    });
 });
+
+
 
 app.listen(4000, ()=>{
     console.log('Escuchando en el puerto 4000');
