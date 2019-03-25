@@ -24,9 +24,14 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/registroU", (req, res) => {
-  res.render("registroU", {
-  });
+app.post("/registroU", (req, res) => {
+  if(ingresarAspirante(req.body.nombre,req.body.contrasenia,req.body.identificacion,"aspirante")){
+    res.render("index", {
+    });
+  }else{
+    res.render('/registroU',{});
+  }
+  
 });
 
 
@@ -105,6 +110,7 @@ const ingresarAspirante = (nombre, contrasenia, identificacion, rol) => {
     usuario.identificacion = identificacion;
     usuario.contrasenia = contrasenia;
     usuario.nombre = nombre;
+    usuario.rol = rol;
     listarUsuarios.push(usuario);
     guardarUsuarioEnTexto();
   }
