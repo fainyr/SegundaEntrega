@@ -1,6 +1,7 @@
 listadoUsuarios = [];
 let fs = require("fs");
 
+
 const listarUsuarios = () => {
     try {
       listadoUsuarios = require("./listadoUsuarios.json");
@@ -10,9 +11,9 @@ const listarUsuarios = () => {
     }
   };
 
-  const verificarUsuario =(identificacion)=>{
+  const verificarUsuario =(identificacion,contrasenia)=>{
       listarUsuarios();
-      let siExisteIdentificacion = listadoUsuarios.find(usuario => usuario.identificacion == identificacion
+      let siExiste = listadoUsuarios.find(usuario => usuario.identificacion == identificacion
                                                          && usuario.contrasenia == contrasenia);
       if(siExiste){
           return true;

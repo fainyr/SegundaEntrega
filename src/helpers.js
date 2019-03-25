@@ -12,9 +12,10 @@ hbs.registerHelper('listarUsuarios',() => {
     }
   });
 
-  hbs.registerHelper('verificarUsuario',(identificacion)=>{
+  hbs.registerHelper('verificarUsuario',(identificacion,contrasenia)=>{
+      console.log('entró al helper a verificar usuario');
       listarUsuarios();
-      let siExisteIdentificacion = listadoUsuarios.find(usuario => usuario.identificacion == identificacion
+      let siExiste = listadoUsuarios.find(usuario => usuario.identificacion == identificacion
                                                          && usuario.contrasenia == contrasenia);
       if(siExiste){
           return true;

@@ -1,15 +1,17 @@
 {{>header}}
-
-<h2>LOGIN USUARIO</h2>
+<header>
+    <h2>LOGIN USUARIO</h2>
+</header>
 
 <div class="formulario">
 
-    <form action="/inicio" method="get">
-        <p>Identificador: <input type="number" placeholder="Identificador" name="ID"></p>
-        <p>Nombre: <input type="text" placeholder="Nombre" name="Nombre"></p>
+    <form action="/inicio" method="post">
+        <p>Identificador: <input type="number" value="10" placeholder="N° de identificación" name="Identificador"></p>
+        <p>Contraseña: <input type="password" value="1234" placeholder="Contraseña" name="Contrasenia"></p>
+        <button >Iniciar Sesión</button>
     </form>
 
-    <button>Iniciar Sesión</button>
+
 
 
 </div>
